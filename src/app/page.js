@@ -1,3 +1,20 @@
+const projects = [
+  {
+    title: "Task Manager API",
+    description: "CRUD API with PostgreSQL, JWT auth, and middleware. Built from scratch.",
+    status: "In Progress",
+    githubUrl: null,
+    liveUrl: null,
+  },
+  {
+    title: "URL Shortener",
+    description: "A bit.ly-style link shortener with click tracking, built with Express and PostgreSQL.",
+    status: "Live",
+    githubUrl: "https://github.com/Noufil69/url-shortener",
+    liveUrl: "https://urlshortener.noufilnaveed.com",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -39,20 +56,28 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="border border-zinc-800 rounded-2xl p-6 hover:border-zinc-600 transition">
-              <h3 className="text-xl font-semibold mb-2">Task Manager API</h3>
-              <p className="text-zinc-400 mb-4">
-                CRUD API with PostgreSQL, JWT auth, and middleware. Built from scratch.
-              </p>
-              <span className="text-sm text-zinc-500">In Progress</span>
-            </div>
-            <div className="border border-zinc-800 rounded-2xl p-6 hover:border-zinc-600 transition">
-              <h3 className="text-xl font-semibold mb-2">URL Shortener</h3>
-              <p className="text-zinc-400 mb-4">
-                A bit.ly-style link shortener with click analytics and rate limiting.
-              </p>
-              <span className="text-sm text-zinc-500">In Progress</span>
-            </div>
+            {projects.map((project) => (
+              <div key={project.title} className="border border-zinc-800 rounded-2xl p-6 hover:border-zinc-600 transition flex flex-col">
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-zinc-400 mb-4 flex-grow">{project.description}</p>
+                {project.githubUrl || project.liveUrl ? (
+                  <div className="flex gap-4 text-sm">
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-white hover:text-zinc-300 underline">
+                        GitHub
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-white hover:text-zinc-300 underline">
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
+                ) : (
+                  <span className="text-sm text-zinc-500">{project.status}</span>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
