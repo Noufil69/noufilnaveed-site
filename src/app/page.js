@@ -1,12 +1,5 @@
 const projects = [
   {
-    title: "Task Manager API",
-    description: "CRUD API with PostgreSQL, JWT auth, and middleware. Built from scratch.",
-    status: "In Progress",
-    githubUrl: null,
-    liveUrl: null,
-  },
-  {
     title: "URL Shortener",
     description: "A bit.ly-style link shortener with click tracking, built with Express and PostgreSQL.",
     status: "Live",
