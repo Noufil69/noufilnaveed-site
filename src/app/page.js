@@ -6,6 +6,13 @@ const projects = [
     githubUrl: "https://github.com/Noufil69/url-shortener",
     liveUrl: "https://urlshortener.noufilnaveed.com",
   },
+  {
+    title: "F1 Telemetry Replay",
+    description: "Real Formula 1 telemetry, replayed at adjustable speed — any race, any driver, since 2023. Built with Node.js, Socket.io, and PostgreSQL, with a live track map driven by real car position data.",
+    status: "Live",
+    githubUrl: "https://github.com/Noufil69/f1-telemetry",
+    liveUrl: "https://f1.noufilnaveed.com",
+  },
 ];
 
 export default function Home() {
