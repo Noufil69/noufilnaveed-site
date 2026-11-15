@@ -13,6 +13,14 @@ const projects = [
     githubUrl: "https://github.com/Noufil69/f1-telemetry",
     liveUrl: "https://f1.noufilnaveed.com",
   },
+  {
+    title: "Phishing Link Checker",
+    description: "Paste a link and get a risk score with the reasons behind it: look-alike names, domain age, certificate and Google Safe Browsing checks, without ever opening the page. Built with Java, Spring Boot, and Docker.",
+    note: "Heads up: this runs on a free server, so the first load can take a minute or more to wake up.",
+    status: "Live",
+    githubUrl: "https://github.com/Noufil69/phishing-detector",
+    liveUrl: "https://phishing-detector-ey8u.onrender.com",
+  },
 ];
 
 export default function Home() {
@@ -60,6 +68,9 @@ export default function Home() {
               <div key={project.title} className="border border-zinc-800 rounded-2xl p-6 hover:border-zinc-600 transition flex flex-col">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-zinc-400 mb-4 flex-grow">{project.description}</p>
+                {project.note && (
+                  <p className="text-sm text-amber-400 mb-4">{project.note}</p>
+                )}
                 {project.githubUrl || project.liveUrl ? (
                   <div className="flex gap-4 text-sm">
                     {project.githubUrl && (
@@ -92,6 +103,9 @@ export default function Home() {
               "Node.js",
               "Express",
               "PostgreSQL",
+              "Java",
+              "Spring Boot",
+              "Docker",
               "Git",
               "Postman",
               "Next.js",
@@ -112,7 +126,7 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
           <p className="text-zinc-400 mb-8">
-            Open to backend and API developer roles. Based in Karachi, targeting Ireland & Australia.
+            Open to backend and API developer roles. Based in Karachi.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href="mailto:naveednoufil@gmail.com" className="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-zinc-200 transition">
