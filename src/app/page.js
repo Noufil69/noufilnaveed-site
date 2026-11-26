@@ -1,4 +1,4 @@
-import ThemeToggle from "@/components/ThemeToggle";
+import Image from "next/image";
 
 // Public contact address (lands in the same inbox as noufil@vantrixsoftware.com).
 const EMAIL = "info@vantrixsoftware.com";
@@ -45,9 +45,8 @@ const personJsonLd = {
   jobTitle: "Backend Developer",
   email: `mailto:${EMAIL}`,
   address: { "@type": "PostalAddress", addressLocality: "Karachi", addressCountry: "PK" },
-  worksFor: { "@type": "Organization", name: "Vantrix Software", url: VANTRIX },
   knowsAbout: skills,
-  sameAs: [GITHUB, VANTRIX],
+  sameAs: [GITHUB],
 };
 
 function ArrowOut() {
@@ -72,9 +71,11 @@ export default function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
 
-      <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-        <a href="#top" className="font-semibold tracking-tight">Noufil Naveed</a>
-        <ThemeToggle />
+      <header className="mx-auto flex max-w-5xl items-center px-6 py-5">
+        <a href="#top" className="inline-flex min-h-11 items-center gap-3 font-semibold tracking-tight">
+          <Image src="/logo-mark.png" alt="" width={39} height={32} priority />
+          Noufil Naveed
+        </a>
       </header>
 
       <main id="top">
@@ -85,11 +86,7 @@ export default function Home() {
               Noufil Naveed
             </h1>
             <p className="mt-6 max-w-xl text-xl text-muted md:text-2xl">
-              Backend developer building APIs that actually work. Founder of{" "}
-              <a href={VANTRIX} className="text-fg underline decoration-line-strong hover:decoration-accent">
-                Vantrix Software
-              </a>
-              .
+              Backend developer building APIs that actually work.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <a href="#projects" className="inline-flex min-h-12 items-center rounded-full bg-fg px-6 font-medium text-bg transition-opacity hover:opacity-85">
@@ -108,8 +105,12 @@ export default function Home() {
             <h2 id="about" className="text-2xl font-bold tracking-tight">About</h2>
             <div className="max-w-[65ch] space-y-4 text-lg leading-relaxed text-muted">
               <p>
-                I&apos;m a BSCS student in Karachi and the founder of Vantrix Software, where I
-                build websites, apps and automation for small businesses.
+                I&apos;m a BSCS student in Karachi. Alongside my studies I take on freelance
+                projects for small businesses through{" "}
+                <a href={VANTRIX} className="text-fg underline decoration-line-strong hover:decoration-accent">
+                  Vantrix Software
+                </a>
+                : websites, apps and automation.
               </p>
               <p>
                 The backend is where I&apos;m most at home: APIs, databases and the parts that have
@@ -169,8 +170,8 @@ export default function Home() {
               Let&apos;s talk.
             </h2>
             <p className="mt-4 max-w-xl text-lg text-muted">
-              Open to backend and API developer roles. For a website, app or automation for your
-              business, see{" "}
+              Open to backend and API developer roles. For freelance work on a website, app or
+              automation, see{" "}
               <a href={VANTRIX} className="text-fg underline decoration-line-strong hover:decoration-accent">
                 Vantrix Software
               </a>

@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 const description =
-  "Noufil Naveed is a backend developer in Karachi building APIs with Node.js, Express, PostgreSQL and Java Spring Boot, and the founder of Vantrix Software.";
+  "Noufil Naveed is a backend developer in Karachi building APIs with Node.js, Express, PostgreSQL and Java Spring Boot.";
 
 export const metadata = {
   metadataBase: new URL("https://noufilnaveed.com"),
@@ -37,25 +37,13 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#050505" },
-    { media: "(prefers-color-scheme: light)", color: "#fafaf8" },
-  ],
+  themeColor: "#050505",
+  colorScheme: "dark",
 };
-
-// Applies a saved Light/Dark choice before the page paints, so there is no flash.
-const themeScript = `try{var t=localStorage.getItem("noufil-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}`;
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-      suppressHydrationWarning
-    >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-svh">{children}</body>
     </html>
   );
